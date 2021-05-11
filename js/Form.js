@@ -4,22 +4,20 @@ class Form {
     this.input = createInput("Name");
     this.button = createButton('Play');
     this.greeting = createElement('h2');
-    this.title = createElement('h2');
   }
   hide(){
     this.greeting.hide();
     this.button.hide();
     this.input.hide();
-   this.title.hide(); 
   }
 
   display(){
-    
-    this.title.html("Car Racing Game");
-this.title.position(displayWidth/2, 0);
+    var title = createElement('h2')
+    title.html("Car Racing Game");
+    title.position(130, 0);
 
-    this.input.position(displayWidth/2, displayHeight/2);
-    this.button.position(displayWidth/2, displayHeight/2+20);
+    this.input.position(130, 160);
+    this.button.position(250, 200);
 
     this.button.mousePressed(()=>{
       this.input.hide();
@@ -30,7 +28,7 @@ this.title.position(displayWidth/2, 0);
       player.update();
       player.updateCount(playerCount);
       this.greeting.html("Hello " + player.name)
-      this.greeting.position(displayWidth/2,displayHeight/2);
+      this.greeting.position(130, 100);
     });
 
   }
